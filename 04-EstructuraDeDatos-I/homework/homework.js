@@ -23,21 +23,29 @@ Como ejercicio adicional y completamente opcional, al terminar de resolver este 
 */
 
 function nFactorial(n) {
-  let factorial = n;
-  for (var i = 1; i < n; i++) {
-    factorial = factorial * i;
-  }
-  return factorial;
+  if (n === 0 || n === 1) return 1;
+
+  if (n < 0) return 'No se puede factorizar un negativo';
+  if (n % 1 !== 0) return 'Solo numeros enteros'
+  return n * nFactorial(n -1)
+  // let factorial = n;
+  // for (var i = 1; i < n; i++) {
+  //   factorial = factorial * i;
+  // }
+  // return factorial;
 }
 
 function nFibonacci(n) {
-  let fibonacci = [];
-  fibonacci[0] = 0;
-  fibonacci[1] = 1;
-  for (var i = 2; i <= 10; i++) {
-    fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
-  }
-  return fibonacci[n];
+  if(n === 0) return 0;
+  if(n=== 1) return 1;
+  return nFibonacci(n-1) + nFibonacci(n-2)
+  // let fibonacci = [];
+  // fibonacci[0] = 0;
+  // fibonacci[1] = 1;
+  // for (var i = 2; i <= 10; i++) {
+  //   fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+  // }
+  // return fibonacci[n];
 }
 
 /*
